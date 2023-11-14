@@ -1,0 +1,35 @@
+#Exercise
+
+def simple_calculator():
+
+    try:
+        num1 = float(input("Enter first number: "))
+    except ValueError:
+        print("Please enter a number.")
+        
+    try:    
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Please enter a number")
+        
+    try:    
+        operation = input("Enter mathematical operation (addition, subtraction, multiplication, division)): ")
+        if operation == "addition":
+            result = num1 + num2
+            
+        elif(operation == "subtraction"):
+            result = num1 - num2
+            
+        elif(operation == "multiplication"):
+            result = num1 * num2
+            
+        elif(operation == "division"):
+            try: 
+                result = num1 / num2
+            except ZeroDivisionError:
+                print("Division by zero is not allowed.")
+                
+        return result        
+        
+    except:
+        print("Please enter a valid mathematical operation.")
