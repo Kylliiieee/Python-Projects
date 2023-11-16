@@ -1,0 +1,37 @@
+# Library Book Management
+
+def checkout_books(librarian_name, *book_titles, duration='2 weeks', **kwargs):
+    # Displaying the librarian's name
+    print(f"Checkout Processed by: {librarian_name}")
+
+    # Displaying the list of books checked out
+    print("Books Checked Out:")
+    for title in book_titles:
+        print(f"- {title}")
+
+    # Displaying the checkout duration
+    print(f"Checkout Duration: {duration}")
+
+    # Displaying additional checkout details using **kwargs
+    print("Additional Checkout Details:")
+    if 'late_fee' in kwargs:
+        print(f"- Late Fee: ${kwargs['late_fee']} per day")
+    if 'renewals_allowed' in kwargs:
+        print(f"- Renewals Allowed: {kwargs['renewals_allowed']}")
+    
+    # Displaying special conditions for checkout
+    if 'special_conditions' in kwargs:
+        print("Special Conditions for Checkout:")
+        for condition in kwargs['special_conditions']:
+            print(f"- {condition}")
+
+# Example usage
+checkout_books(
+    'Sarah Connor',
+    '1984', 'Brave New World',
+    duration='3 weeks',
+    late_fee=0.25,
+    renewals_allowed=2,
+    special_conditions=['Handle with care']
+)
+
